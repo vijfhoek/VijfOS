@@ -12,7 +12,7 @@ typedef struct __attribute__((packed))
 
 typedef struct __attribute__((packed))
 {
-	u16 Size;
+	u16 Limit;
 	u32 Base;
 } IDTPointer;
 

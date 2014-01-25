@@ -13,9 +13,8 @@ void KernelMain()
 	TerminalPutDecimal(sizeof(IDTPointer));
 	TerminalPutString("\nsizeof(IDTEntry) = ");
 	TerminalPutDecimal(sizeof(IDTEntry));
-	TerminalPutString("\n\n");
-
-	TerminalPutString("Dividing by 0...");
+	TerminalPutString("\nsizeof(IDTEntries) = ");
+	TerminalPutDecimal(sizeof(IDTEntries));
 
 	__asm__ volatile("int $0x0");
 }

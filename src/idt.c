@@ -40,7 +40,7 @@ void IDTInit()
 
 	IDTPointer idtp;
 	idtp.Base = (u32)IDTEntries;
-	idtp.Size = sizeof(IDTEntries);
+	idtp.Limit = sizeof(IDTEntries) - 1;
 	IDTFlush(&idtp);
 }
 
