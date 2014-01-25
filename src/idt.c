@@ -38,7 +38,10 @@ void IDTInit()
 	IDTSetEntry(30, (u32)ISR30, 0x08, 0x8E);
 	IDTSetEntry(31, (u32)ISR31, 0x08, 0x8E);
 
-	IDTFlush(IDTEntries, sizeof(IDTEntries));
+	IDTPointer idtp;
+	idtp.Base = (u32)IDTEntries;
+	idtp.Size = sizeof(IDTEntries);
+	IDTFlush(&idtp);
 }
 
 void IDTSetEntry(u8 i, u32 base, u16 selector, u8 flags)
