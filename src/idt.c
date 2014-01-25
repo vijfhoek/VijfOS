@@ -3,7 +3,7 @@
 
 void IDTInit()
 {
-	memset(&IDTEntries, 0, sizeof(IDTEntries));
+	memset(IDTEntries, 0, sizeof(IDTEntries));
 
 	IDTSetEntry(0,  (u32)ISR00, 0x08, 0x8E);
 	IDTSetEntry(1,  (u32)ISR01, 0x08, 0x8E);

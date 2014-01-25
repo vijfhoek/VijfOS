@@ -17,7 +17,6 @@ void KernelMain()
 
 	TerminalPutString("Dividing by 0...");
 
-	//volatile int i = 5, j = 0, k = i / j;
 	__asm__ volatile("int $0x0");
 }
 
