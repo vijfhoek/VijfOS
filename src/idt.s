@@ -1,6 +1,6 @@
 [global IDTFlush]
 IDTFlush:
-	mov eax, [esp]
+	mov eax, [esp+4]
 	lidt [eax]
 	ret
 
