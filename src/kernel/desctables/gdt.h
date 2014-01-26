@@ -1,15 +1,24 @@
 #pragma once
 #include "../common.h"
 
-struct GDTEntry
+typedef struct __attribute__((packed))
 {
-	u32 Limit;
+	u16 LimitLow;
+	u16 BaseLow;
+	u8  BaseMid;
+	u8  AccessByte;
+	u8  LimitHigh;
+	u8  BaseHigh;
+} GDTEntry;
+
+typedef struct __attribute__((packed))
+{
+	u16 Limit;
 	u32 Base;
-	u8  Access;
-	u8  Flags;
-};
+} GDTPointer;
 
 void GDTInit();
 void GDTSetEntry(int i, u32 base, u32 limit, u8 flags, u8 access);
+extern void GDTFlush();
 
-u64 GDTTable[5];
+GDTEntry GDTEntries[5];
