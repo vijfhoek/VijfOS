@@ -1,5 +1,5 @@
 #include "terminal.h"
-
+#include <string.h>
 u16 *Terminal = (u16 *)0xB8000;
 
 void TerminalInitialize()
@@ -43,6 +43,14 @@ void TerminalPutChar(u8 c)
 	default:
 		Terminal[TerminalCursorPos++] = (u16)c | (TerminalColour << 8);
 	}
+
+	if (TerminalCursorPos > (80*24))
+	{
+		TerminalCursorPos -= 80;
+		for (int i = 0; i < (80 * 24); i++)
+			Terminal[i] = Terminal[i + 80];
+	}
+
 	TerminalUpdateCursor();
 }
 
