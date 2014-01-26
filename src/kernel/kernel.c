@@ -1,6 +1,6 @@
 #include "terminal.h"
-#include "gdt.h"
-#include "idt.h"
+#include "desctables/gdt.h"
+#include "desctables/idt.h"
 
 void KernelMain()
 {
