@@ -3,18 +3,18 @@
 
 typedef struct __attribute__((packed))
 {
-	u16 LimitLow;
-	u16 BaseLow;
-	u8  BaseMid;
-	u8  AccessByte;
-	u8  LimitHigh;
-	u8  BaseHigh;
+        u16 LimitLow;
+        u16 BaseLow;
+        u8  BaseMid;
+        u8  AccessByte;
+        u8  LimitHigh;
+        u8  BaseHigh;
 } GDTEntry;
 
 typedef struct __attribute__((packed))
 {
-	u16 Limit;
-	u32 Base;
+        u16 Limit;
+        u32 Base;
 } GDTPointer;
 
 void GDTInit();

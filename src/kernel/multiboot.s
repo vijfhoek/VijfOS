@@ -1,19 +1,19 @@
-	%define MAGIC 0x1BADB002
+        %define MAGIC 0x1BADB002
 
 section ".multibootstack"
 MBStackBottom:
-	times 16384 db 0
+        times 16384 db 0
 MBStackTop:
 
 section ".text"
 [global MBStart]
 MBStart:
-	mov esp, MBStackTop
+        mov esp, MBStackTop
 
-	[extern KernelMain]
-	call KernelMain
+        [extern KernelMain]
+        call KernelMain
 
-	; When KernelMain returns, disable interrupts and hang
-	cli
-.Crash:	hlt
-	jmp .Crash
+        ; When KernelMain returns, disable interrupts and hang
+        cli
+.Crash: hlt
+        jmp .Crash

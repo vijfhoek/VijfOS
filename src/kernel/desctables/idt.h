@@ -3,17 +3,17 @@
 
 typedef struct __attribute__((packed))
 {
-	u16 BaseLow;			// Lower 16 bits of address to jump to
-	u16 Selector;			// Kernel segment selector
-	u8  Reserved;			// Should always be 0
-	u8  Flags;
-	u16 BaseHigh;			// Higher 16 bits of the address to jump to
+        u16 BaseLow;			// Lower 16 bits of address to jump to
+        u16 Selector;			// Kernel segment selector
+        u8  Reserved;			// Should always be 0
+        u8  Flags;
+        u16 BaseHigh;			// Higher 16 bits of the address to jump to
 } IDTEntry;
 
 typedef struct __attribute__((packed))
 {
-	u16 Limit;
-	u32 Base;
+        u16 Limit;
+        u32 Base;
 } IDTPointer;
 
 IDTEntry IDTEntries[256];
