@@ -10,9 +10,6 @@ section ".text"
 MBStart:
 	mov esp, MBStackTop
 
-	[extern GDTInit]
-	call GDTInit
-
 	[extern KernelMain]
 	call KernelMain
 

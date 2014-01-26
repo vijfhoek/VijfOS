@@ -4,6 +4,7 @@
 
 void KernelMain()
 {
+	GDTInit();
 	IDTInit();
 	TerminalInitialize();
 

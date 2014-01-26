@@ -12,7 +12,7 @@ void GDTInit()
 	GDTFlush(&gdtp);
 }
 
-void GDTSetEntry(int i, u32 base, u32 limit, u8 flags, u8 access)
+void GDTSetEntry(int i, u32 base, u32 limit, u8 access, u8 flags)
 {
 	GDTEntries[i].BaseLow = base;
 	GDTEntries[i].BaseMid = base >> 16;

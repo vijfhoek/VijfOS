@@ -18,7 +18,7 @@ typedef struct __attribute__((packed))
 } GDTPointer;
 
 void GDTInit();
-void GDTSetEntry(int i, u32 base, u32 limit, u8 flags, u8 access);
+void GDTSetEntry(int i, u32 base, u32 limit, u8 access, u8 flags);
 extern void GDTFlush();
 
 GDTEntry GDTEntries[5];
